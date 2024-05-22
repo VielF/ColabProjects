@@ -1,5 +1,3 @@
-# Kaustav Vats (2016048)
-
 import numpy as np
 import cv2
 import sys

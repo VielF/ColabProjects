@@ -31,7 +31,7 @@ def ShowCluster(img, centroids, clusterLabels, imgNameOut="out.png"):
    cv2.imwrite(imgNameOut, result)
    #some problem - it's not necessary
    #TODO
-   #ScatterPlot(img, centroids, clusterLabels, plotNameOut="scatterPlot.png")
+   ScatterPlot(img, centroids, clusterLabels, plotNameOut="scatterPlot.png")
    cv2.imshow("K-Mean Cluster", result)
    cv2.waitKey(0)
 
@@ -64,6 +64,8 @@ def KMeans3D(img, k=2, max_iterations=100, imgNameOut="out.png"):
       centroids[i, 0] = b
       centroids[i, 1] = g
       centroids[i, 2] = r
+      #centroids[i, 3] = x
+      #centroids[i, 4] = y
       #in 5D add too x and y in centroids
 
 
@@ -117,7 +119,7 @@ Image = cv2.resize(Image, None, fx=0.25, fy=0.25)
 print("Image Size:", Image.shape)
 
 
-KMeans3D(Image, k=4, max_iterations=10, imgNameOut="img_out.png")
+KMeans3D(Image, k=2, max_iterations=10, imgNameOut="img_out.png")
 
 
 
